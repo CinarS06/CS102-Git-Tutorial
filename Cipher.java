@@ -20,26 +20,23 @@ public class Cipher
 
         return outputString;
     }
-
     public String decrypt(String inputString) {
         
         // output string will be collected in this variable, one char at a time
         String outputString = "";
         
-       for (int i = 0; i < inputString.length(); i++)   
+        for (int i = 0; i < inputString.length(); i++)   
         {
             outputString += replaceChar( inputString.charAt(i), false);
         }
         return outputString;
     }
-
     // replaces the given input char based on the given isEncrypt variable
     // if isEncrypt == true -> original to encrypted
     // if isEncrypt == false -> encrypted to original
     // works only when the input char is included in our alphabet variables
     // should not replace symbols or upper case letters, return input char in those cases
     private char replaceChar(char inputChar, boolean isEncrypt) {
-        
         if(isEncrypt) {
             for (int i = 0; i < ORIGINAL_ALPHABET.length(); i++)   
             {
@@ -56,9 +53,7 @@ public class Cipher
                 }
             }
         }
-        
         // if we did not find it in the alphabet, then return the original char
         return inputChar;
     }
-
 }   
